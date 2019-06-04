@@ -1,0 +1,23 @@
+#Missing data
+
+import numpy as np 
+import pandas as pd 
+
+#'np.nan' is a numpy value that shows that there is not a number.
+
+df = pd.DataFrame({'Wage':[15000,20000,40000], 'goalbonus' : [5000, np.nan,np.nan],'imagerights' :[1000,np.nan,10000] },index = ['abubakar','srokowski','hamad'], columns = ['Wage','goalbonus','imagerights'])
+
+print(df) #printing matrix
+
+# print(df.dropna()) #removing players who have unknown data
+# print(df.dropna(axis = 1)) #removing columns which have unknown data
+
+
+print(df.fillna(value = 0)) #filling with 0 for unknown data
+
+print(df['goalbonus'].fillna(value = df['goalbonus'].mean())) #using mean of other values to replace data of unknown data
+
+
+
+
+
