@@ -1,0 +1,20 @@
+#grouping data
+
+import pandas as pd 
+
+data = {'opponent':["chelsea","mancity","spurs","liverpool"],'location':["home","away","home","away"],'goalsfor':[2,4,3,1],'goalsagainst':[1,3,4,2]}
+
+matches = pd.DataFrame(data)
+print(matches)
+    
+print(matches.groupby('location').mean()) #grouping home and away matches then taking average
+
+print(matches.groupby('location').describe())
+
+print("All that work done in just " + 
+      str(len("Matches.groupby('Location').describe().transpose()['Away']"))
+     + " characters!")
+
+
+
+    
