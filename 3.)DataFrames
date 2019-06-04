@@ -1,1 +1,33 @@
+#Dataframes 
+
+import pandas as pd 
+import numpy as np 
+
+playerlist = ["chalov","Berge","Bentancur","odegaard"]
+skills = ["shooting","passing","defending"]
+
+#using random number for stats
+
+scoresarray = np.random.randint(1,10,(4,3)) #creating 3 skill scores for 4 players
+
+#y axis = index, x axis = columns.
+df = pd.DataFrame(data = scoresarray, index = playerlist,columns = skills) #joining given data and making appropriate table
+print(df)
+
+print(df ['shooting']) #DataFrame columns are series
+print(df.loc['Berge']) #for rows we use .loc and these are also series
+print(df.iloc[0:3]) #using index number
+
+df['communication'] = np.random.randint(1,10,4) #adding extra skill "communication" in DataFrame
+print(df)
+
+df = df.drop('defending', axis = 1) #dropping defending stats (axis =1) implies columns, 0 for rows
+print(df)
+
+df = df.drop('Bentancur',axis = 0) #removing Bentancur as hes expensive (plays for Juve)
+df.loc['maxim'] = np.random.randint(1,10,3) #adding new player to target and adding his data.
+print(df)
+
+print(df['shooting']>5) #checking who got shooting score above 5
+print(df[df['shooting']>5]) #showing all stats of players who got shooting score above 5
 
