@@ -1,0 +1,26 @@
+import numpy as np 
+
+WCyears = np.arange(1930,2018,4) #every worldcup since 1930
+WCyears = np.delete(WCyears,(3,4))
+
+print(WCyears)
+print(WCyears[5])#when was 4th wc held
+print(WCyears[3:7])
+
+WCyears = [2002,2006,2010,2014]
+WChosts = ["japan","germany","south africa","brazil"]
+WCwinners = ["brazil","italy","spain","germany"]
+
+
+WCarray = np.array((WCyears,WChosts,WCwinners))
+
+print(WCarray)
+
+print(WCarray[1,2]) #2010 wc host
+print(WCarray[2,-1]) #last wc winner
+
+WCyears = np.array([2002,2006,2010,2014])
+WCtopscorers = np.array(["Ronaldo","klose","muller","james rodriquez"])
+WCgoals = np.array([8,5,5,6])
+
+print(WCtopscorers[(WCgoals > 5)])
