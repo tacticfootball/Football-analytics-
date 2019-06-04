@@ -1,0 +1,22 @@
+#Series and dictionaries 
+
+#series allow us to label axes
+
+import numpy as np 
+import pandas as pd 
+
+capacity = pd.Series(data = [94,93,93],index = ["cr7","messi","neymar"])
+print(capacity)
+
+print(capacity["neymar"])
+
+#using dictionary
+capacityDict = {
+                'cr7' : 94,
+                'messi' : 93,
+                'neymar' : 93,
+                }
+                
+capacity = pd.Series(capacityDict)
+print(capacity)
+                
