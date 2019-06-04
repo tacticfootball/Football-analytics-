@@ -1,2 +1,2 @@
 # Football-analytics-
-learing football analytics from FC Python
+learning football analytics from FC Python
