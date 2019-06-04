@@ -31,3 +31,4 @@ print(df)
 print(df['shooting']>5) #checking who got shooting score above 5
 print(df[df['shooting']>5]) #showing all stats of players who got shooting score above 5
 
+#wubba lubba dub dub
