@@ -1,0 +1,41 @@
+#describing datasets
+
+import numpy as np 
+import pandas as pd 
+
+#reading a csv file
+df = pd.read_csv("../data/Refs.csv") 
+
+#to see top rows and check out structure
+df.head()
+
+df.columns = ['Date','HomeTeam','AwayTeam',
+                 'Referee','HomeFouls','AwayFouls',
+                 'TotalFouls','HomeYellows','AwayYellows',
+                'TotalYellows', 'HomeReds','AwayReds','TotalReds']
+
+df.head(2) #shows top 2 rows 
+
+len(df) # to see no. of matches or data 
+
+df.describe() #gives count,mean,STD,min,25%...,max,min.
+
+#checking data by Referee using groupby
+
+groupedrefs = df.groupby("Referee")
+
+#all averges
+
+groupedrefs.describe() 
+
+#analyzing yellow cards
+
+groupedrefs.describe()['TotalYellows']  #this shows which Referee mostly likely to give yeloow card 
+
+
+
+
+
+
+
+
