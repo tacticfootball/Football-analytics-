@@ -1,0 +1,44 @@
+#concatenation and merging
+
+import numpy as np
+import pandas as pd
+
+match1 = pd.DataFrame({'Opponent':['Mancity'],
+                      'GoalsFor':[1],
+                       'GoalsAgainst':[1],
+                       'Attendance':[53225]})
+
+match2 = pd.DataFrame({'Opponent':['Liverpool'],
+                      'GoalsFor':[3],
+                       'GoalsAgainst':[0],
+                       'Attendance':[53256]})
+
+match3 = pd.DataFrame({'Opponent':['Chelsea'],
+                      'GoalsFor':[4],
+                       'GoalsAgainst':[1],
+                       'Attendance':[53225]})
+
+print(match3)
+
+allmatches = pd.concat([match1,match2,match3]) #stacking on one another using concat
+
+print(allmatches)
+
+
+match1scorers = pd.DataFrame({'first':['augero'],'last':['philly'],'Opponent' : ['Mancity']})
+match2scorers = pd.DataFrame({'first':['salah'],'last':['philly'],'Opponent' : ['Liverpool']})
+match3scorers = pd.DataFrame({'first':['hazard'],'last':['philly'],'Opponent' : ['Chelsea']})
+
+allscorers = pd.concat([match1scorers,match2scorers,match3scorers])
+
+print(allscorers)
+
+#using merge, 4 arguments 2 data frames to be merged. 
+#how argument (type of join we need here inner its simplest)
+#on argument the column the data frame to be built around 
+table = pd.merge(allmatches,allscorers,how = 'inner',on = 'Opponent')
+
+print(table)
+
+
+
